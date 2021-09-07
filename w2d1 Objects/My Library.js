@@ -1,4 +1,6 @@
-const books= [];
+module.exports = {addBook, findTitle, findAuthor, findIds };
+
+const library= [];
 /**
  * 
  * @param {string} title 
@@ -13,56 +15,56 @@ function addBook(title,author,libraryId){
     obj.author = author;
     obj.libraryId = libraryId;
 
- return books.push(obj);
+ return library.push(obj);
 }
 
-addBook("mike","efi",123);
-addBook("Winta","filli",345)
-addBook("smega","shizzi",567)
-console.log(books);
+// addBook("mike","efi",123);
+// addBook("Winta","filli",345)
+// addBook("smega","shizzi",567)
+// console.log(library);
 
 /**
  * 
  * @returns returns list of titles
  */
 function findTitle(){
-let titleList = []
+let titles = []
 
-for (let key of books){
-    titleList.push(key.title)
+for (let key of library){
+    titles.push(key.title)
 }
-return titleList.sort();
+return titles.sort();
 }
 
-console.log(findTitle())
+// console.log(findTitle())
 
 /**
  * 
  * @returns returns list of authors
  */
 function findAuthor(){
-    let authorList = []
+    let authors = []
     
-    for (let key of books){
-        authorList.push(key.author)
+    for (let key of library){
+        authors.push(key.author)
     }
-    return authorList.sort();
+    return authors.sort();
 }
-    console.log(findAuthor())
+    // console.log(findAuthor())
 
 /**
  * 
  * @returns returns Library Id's
  */
 function findIds(){
-    let idList = []
+    let ids = []
     
-    for (let key of books){
-        idList.push(key.libraryId)
+    for (let key of library){
+        ids.push(key.libraryId)
     }
-    return idList.sort();
+    return ids.sort();
 }
-console.log(findIds())
+// console.log(findIds())
 
 
     
