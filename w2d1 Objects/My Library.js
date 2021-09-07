@@ -1,6 +1,15 @@
 module.exports = {addBook, findTitle, findAuthor, findIds };
 
-const library= [];
+// const library= [];
+
+let library = [
+    { title: "The Road Ahead", author: "Bill Gates", libraryID: 1254 },
+    { title: "Walter Isaacson", author: "Steve Jobs", libraryID: 4264 },
+    { title: "Mockingjay: The Final Book of The Hunger Games", author: "Suzanne Collins", libraryID: 3245 }
+];
+// const titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];
+//     const authors = ["Bill Gates", "Steve Jobs", "Suzanne Collins"];
+//    const ids = [1254, 3245, 4264];
 /**
  * 
  * @param {string} title 
@@ -13,9 +22,11 @@ function addBook(title,author,libraryId){
 
     obj.title = title;
     obj.author = author;
-    obj.libraryId = libraryId;
-
- return library.push(obj);
+    obj.libraryID = libraryId;
+    
+    console.log(library.push(obj));
+    
+ return obj;
 }
 
 // addBook("mike","efi",123);
@@ -60,9 +71,10 @@ function findIds(){
     let ids = []
     
     for (let key of library){
-        ids.push(key.libraryId)
+        ids.push(key.libraryID)
+        
     }
-    return ids.sort();
+    return ids;
 }
 // console.log(findIds())
 

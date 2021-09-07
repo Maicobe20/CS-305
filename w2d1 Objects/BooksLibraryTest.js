@@ -2,7 +2,8 @@
 /*  comment out the exports when running in the browser */
 const assert = require("assert");  //always need this with node
 const myExports = require("./My Library.js");  //with node need the name of your file with your functions here
-  //do this for all of the functions used in the Mocha tests
+console.log(myExports)  
+//do this for all of the functions used in the Mocha tests
 const addBook = myExports.addBook
 const findTitle = myExports.findTitle
 const findAuthor = myExports.findAuthor
@@ -26,9 +27,14 @@ describe("library", function () {
         { title: "Mockingjay: The Final Book of The Hunger Games", author: "Suzanne Collins", libraryID: 3245 }
     ];
 
-    const titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];
+   
+
+
+   const titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];
     const authors = ["Bill Gates", "Steve Jobs", "Suzanne Collins"];
-   const ids = [1254, 3245, 4264];
+   // const ids = [1254, 3245, 4264];
+   const ids = [1254,4264, 3245];
+
 //    const ids = [1254,4264, 3245];
 
 
@@ -49,12 +55,10 @@ describe("library", function () {
         ids.push(1144);
        // assert.deepEqual(addBook(newBook), newBook);
        assert.deepEqual(addBook( "My New Book","Me Too",1144), newBook);
-        assert.deepEqual(findIDs(), ids);
+        assert.deepEqual(findIds(), ids);
     });
 
 });
-
-
 
 
 
